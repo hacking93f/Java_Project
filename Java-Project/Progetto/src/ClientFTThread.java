@@ -67,6 +67,8 @@ public class ClientFTThread extends Thread {
 try {
 			
 			BufferedInputStream fis =new BufferedInputStream (new FileInputStream(Client.Percorso));
+			File f =new File(Client.Percorso);
+			if(f.isFile()) {
 			
 			byte[] baos = new byte[6022386];
 			int a = fis.read(baos);
@@ -79,7 +81,9 @@ try {
 			
 			}
 			 fis.close();
-        
+			}else if (f.isDirectory()) {
+				System.out.println("Non è un file");
+			}
            
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

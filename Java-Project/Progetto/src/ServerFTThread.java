@@ -52,6 +52,7 @@ public class ServerFTThread extends Thread {
 
 		
 		while(true) {
+			
 		try {
 			
 			

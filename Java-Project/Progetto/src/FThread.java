@@ -11,9 +11,6 @@ package src;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
 
 public class FThread extends Thread {
 	
@@ -22,44 +19,8 @@ public class FThread extends Thread {
 	static byte[] read;
 	static int current = 0;
 	
-		public void getDownload() {
+
 			
-			 try {
-				 
-					do {
-						
-					
-						len=ServerFTThread.FTin.read(read,current, (read.length-current));
-
-						if(len >= 0) { current += len;
-						
-						}
-						
-					}
-					while(len < -1 );
-					
-			      fos =new BufferedOutputStream (new FileOutputStream("filedumped"));
-					//i parametri dopo la virgola servono per non far scrivere piu byte del dovuto!
-
-			    
-			      fos.flush();
-			      
-			      fos.write(read,0, current);
-			  
-					 }catch(Exception e) {
-						 System.out.println(e);
-					 }
-					 
-					try {
-			
-						fos.close();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-			             	
-		}
-
 	
 	public void run() {
 	
@@ -70,12 +31,41 @@ public class FThread extends Thread {
 		len = ServerFTThread.FTin.read(read) ;
 
 		current = len;	
-	
-		 } catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+		
+		do {
+			
+			
+			len=ServerFTThread.FTin.read(read,current, (read.length-current));
+
+			if(len >= 0) { current += len;
+			
+			}
+			
+		}
+		while(len < -1 );
+		
+      fos =new BufferedOutputStream (new FileOutputStream("filedumped"));
+		//i parametri dopo la virgola servono per non far scrivere piu byte del dovuto!
+
+    
+      fos.flush();
+      
+      fos.write(read,0, current);
+  
+		 }catch(Exception e) {
+			 System.out.println(e);
+		 }
 		 
+		try {
+
+			fos.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	
+		
 	}     	
 	
 }

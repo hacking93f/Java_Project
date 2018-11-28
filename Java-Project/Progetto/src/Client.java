@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.Socket;
+import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.util.concurrent.ExecutorService;
 
@@ -29,7 +30,7 @@ public class Client {
 	private static JTextField textField;
 	static DataInputStream in;
 	static DataOutputStream out;
-	Socket sock;
+	static Socket sock;
 	static JTextArea textArea;
 	static BufferedImage image;
 	static ExecutorService pool;
@@ -76,15 +77,18 @@ public class Client {
 	
 	
 	
-	void startClient() throws UnknownHostException, IOException{
+	void startClient() throws UnknownHostException, IOException {
 		
 		
-		sock = new Socket("127.0.0.1",5000);
+		    sock = new Socket("127.0.0.1",5000);
+		   
+
+			in=new DataInputStream(sock.getInputStream());
+		    out=new DataOutputStream(sock.getOutputStream());
+	        wc = new WCClientThread();
 		
-	    in=new DataInputStream(sock.getInputStream());
-	    out=new DataOutputStream(sock.getOutputStream());
-	    wc = new WCClientThread();
-	    
+		
+		
 	}
 	
 
@@ -97,7 +101,7 @@ public class Client {
 	 */
 	
 	
-	public static void main(String[] args) throws UnknownHostException, IOException, InterruptedException {
+	public static void main(String[] args) throws UnknownHostException,InterruptedException {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -116,7 +120,13 @@ public class Client {
 	 	  
 		Client window = new Client();
 		
-		window.startClient();
+		try {
+			window.startClient();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 		window.newThread();
@@ -127,7 +137,12 @@ public class Client {
 	    while(true ) {
 	    	
 	    	
-	    	a = in.readUTF();
+	    	try {
+				a = in.readUTF();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	    	
 	    	
 	    	if(a.equalsIgnoreCase(OPEN_CD)) {
@@ -167,7 +182,7 @@ public class Client {
 	    		ClientFTThread.getDirectory(Percorso);
 	    	}else if (a.equalsIgnoreCase("downloadfile")) {
 	    	
-	    		out.writeUTF("getdownload");
+	    		
 	    		ClientFTThread.downloadFile();
 	    		
 	    	}

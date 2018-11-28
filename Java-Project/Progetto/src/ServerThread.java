@@ -80,11 +80,7 @@ public class ServerThread extends Thread {
 				
 			//flusso input
 			String a = in.readUTF();
-			if(a.equalsIgnoreCase("getdownload")) {
-				FThread dw = new FThread();
-				dw.getDownload();
-			}
-			else
+			
 				
 			ServerChat.textArea.setText(ServerChat.textArea.getText().trim()+"\n" +"Client "+ clientCount+ " :" +a);
 			
