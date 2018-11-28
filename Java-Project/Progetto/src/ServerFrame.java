@@ -3,6 +3,9 @@ package src;
 /*
  * RAT coded by N0H Java mlwr v b 0.5
  * 
+ la classe principale del Server è LoginFrame quindi quando esportare l'app in un esecutibile jar 
+ la classe del server principale è LoginFrame, mentre del client è Client
+                                                                                              N0H
  * nei successivi ritocchi dovrò imlpementare file explorer ecc..
  * per adesso ho aggiunto un nuovo thread con un propio flusso in/out
  * il flusso del thread è solo out dal client, e in dal server, (posso solo ricevere dal client).
